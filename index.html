@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahma Ras — Data Science & AI</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; }
+nav { padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+nav .name { font-weight: 600; font-size: 1.1rem; }
+nav a { text-decoration: none; color: #444; margin-left: 1.5rem; font-size: 0.95rem; }
+nav a:hover { color: #000; }
+.hero { padding: 5rem 2rem; max-width: 800px; margin: 0 auto; }
+.hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem; }
+.hero p { font-size: 1.15rem; color: #444; line-height: 1.7; margin-bottom: 2rem; max-width: 620px; }
+.buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn { padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+.btn-primary { background: #1a1a1a; color: white; }
+.btn-secondary { border: 1px solid #ccc; color: #1a1a1a; }
+.btn:hover { opacity: 0.85; }
+.section { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
+.section h2 { font-size: 1.6rem; font-weight: 600; margin-bottom: 2rem; }
+.project-card { border: 1px solid #e5e5e5; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+.project-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+.project-card p { color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.tag { background: #f0f0f0; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; color: #444; }
+.project-card a { color: #1a1a1a; font-size: 0.9rem; font-weight: 500; text-decoration: underline; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.skill-group h4 { font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem; }
+.skill-group p { color: #555; font-size: 0.9rem; line-height: 1.6; }
+.divider { border: none; border-top: 1px solid #eee; margin: 0; }
+footer { padding: 2rem; text-align: center; color: #888; font-size: 0.9rem; }
+footer a { color: #444; margin: 0 0.75rem; text-decoration: none; }
+</style>
+</head>
+<body>
+<nav>
+  <span class="name">Rahma Ras</span>
+  <div>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="mailto:rasrahma06@gmail.com">Contact</a>
+  </div>
+</nav>
+<div class="hero">
+  <h1>Data Science & AI</h1>
+  <p>Graduate student at UMBC with hands-on experience in machine learning, generative AI, and clinical data systems. Built and deployed a breast cancer prediction system using TCGA RNA-seq data with SHAP explainability, and developed conversational AI agents at a Voice AI startup.</p>
+  <div class="buttons">
+    <a href="https://rasrahma06-rahmaras-er-predictor.hf.space" class="btn btn-primary">Live App</a>
+    <a href="https://github.com/RahmaRas" class="btn btn-secondary">GitHub</a>
+    <a href="https://linkedin.com/in/rahma-ras" class="btn btn-secondary">LinkedIn</a>
+  </div>
+</div>
+<hr class="divider">
+<div class="section" id="projects">
+  <h2>Projects</h2>
+  <div class="project-card">
+    <h3>ER Status Predictor — Genomic AI (DATA 606 Capstone)</h3>
+    <p>Predicted breast cancer ER status from TCGA RNA-seq data (780 patients, 20,530 genes) achieving ROC-AUC 0.95. Built an evaluation framework measuring stability, fairness, and explainability beyond accuracy. Validated on METABRIC (1,937 patients). Deployed as a live clinical web app with SHAP explanations and downloadable reports.</p>
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">Scikit-learn</span>
+      <span class="tag">SHAP</span>
+      <span class="tag">SMOTE</span>
+      <span class="tag">Streamlit</span>
+      <span class="tag">TCGA</span>
+    </div>
+    <a href="https://github.com/RahmaRas/er-status-predictor">View on GitHub →</a>
+  </div>
+  <div class="project-card">
+    <h3>Conversational AI Agent — Genaiva</h3>
+    <p>Developed conversational AI agents using LangChain and LangGraph at a Voice AI startup. Implemented RAG pipelines with vector databases and integrated STT/TTS APIs including Twilio and Deepgram for real-time inference workflows.</p>
+    <div class="tags">
+      <span class="tag">LangChain</span>
+      <span class="tag">LangGraph</span>
+      <span class="tag">RAG</span>
+      <span class="tag">Python</span>
+      <span class="tag">Twilio</span>
+    </div>
+  </div>
+</div>
+<hr class="divider">
+<div class="section" id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h4>Machine Learning</h4>
+      <p>Scikit-learn, SHAP, SMOTE, Random Forest, cross-validation, model evaluation</p>
+    </div>
+    <div class="skill-group">
+      <h4>Generative AI</h4>
+      <p>LLMs, RAG, LangChain, LangGraph, prompt engineering, BioGPT</p>
+    </div>
+    <div class="skill-group">
+      <h4>Data Engineering</h4>
+      <p>Python, SQL, Pandas, NumPy, Hadoop, Spark, Streamlit</p>
+    </div>
+    <div class="skill-group">
+      <h4>Tools & Platforms</h4>
+      <p>GitHub, Docker, Hugging Face, Tableau, Google Workspace</p>
+    </div>
+  </div>
+</div>
+<hr class="divider">
+<footer>
+  <p>
+    <a href="mailto:rasrahma06@gmail.com">rasrahma06@gmail.com</a>
+    <a href="https://github.com/RahmaRas">GitHub</a>
+    <a href="https://linkedin.com/in/rahma-ras">LinkedIn</a>
+  </p>
+  <p style="margin-top: 0.5rem;">Rahma Ras · UMBC Data Science</p>
+</footer>
+</body>
+</html>
