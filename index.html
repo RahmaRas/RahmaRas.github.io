@@ -4,113 +4,396 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rahma Ras — Data Science & AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; }
-nav { padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
-nav .name { font-weight: 600; font-size: 1.1rem; }
-nav a { text-decoration: none; color: #444; margin-left: 1.5rem; font-size: 0.95rem; }
-nav a:hover { color: #000; }
-.hero { padding: 5rem 2rem; max-width: 800px; margin: 0 auto; }
-.hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem; }
-.hero p { font-size: 1.15rem; color: #444; line-height: 1.7; margin-bottom: 2rem; max-width: 620px; }
-.buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
-.btn { padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
-.btn-primary { background: #1a1a1a; color: white; }
-.btn-secondary { border: 1px solid #ccc; color: #1a1a1a; }
-.btn:hover { opacity: 0.85; }
-.section { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
-.section h2 { font-size: 1.6rem; font-weight: 600; margin-bottom: 2rem; }
-.project-card { border: 1px solid #e5e5e5; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
-.project-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
-.project-card p { color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
-.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-.tag { background: #f0f0f0; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; color: #444; }
-.project-card a { color: #1a1a1a; font-size: 0.9rem; font-weight: 500; text-decoration: underline; }
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-.skill-group h4 { font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem; }
-.skill-group p { color: #555; font-size: 0.9rem; line-height: 1.6; }
-.divider { border: none; border-top: 1px solid #eee; margin: 0; }
-footer { padding: 2rem; text-align: center; color: #888; font-size: 0.9rem; }
-footer a { color: #444; margin: 0 0.75rem; text-decoration: none; }
+:root {
+  --violet: #6c4ef2;
+  --violet-light: #ede9fe;
+  --pink: #d946a8;
+  --pink-light: #fce7f3;
+  --teal: #0ea5a0;
+  --teal-light: #ccfbf1;
+  --amber: #f59e0b;
+  --text: #111118;
+  --muted: #6b6b80;
+  --bg: #f8f7ff;
+  --white: #ffffff;
+  --border: rgba(108,78,242,0.12);
+  --card-shadow: 0 4px 32px rgba(108,78,242,0.1);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Plus Jakarta Sans',sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden; }
+
+.orbs { position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden; }
+.orb { position:absolute;border-radius:50%;filter:blur(90px);opacity:0.22;animation:drift 16s ease-in-out infinite; }
+.orb-1{width:700px;height:700px;background:var(--violet);top:-200px;right:-150px;animation-delay:0s;}
+.orb-2{width:550px;height:550px;background:var(--pink);bottom:5%;left:-180px;animation-delay:-5s;}
+.orb-3{width:450px;height:450px;background:var(--teal);top:45%;right:5%;animation-delay:-10s;}
+.orb-4{width:300px;height:300px;background:var(--amber);bottom:20%;right:30%;animation-delay:-8s;opacity:0.12;}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(25px,-25px) scale(1.04);}66%{transform:translate(-18px,18px) scale(0.97);}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);background:rgba(248,247,255,0.82);border-bottom:1px solid var(--border);transition:box-shadow 0.3s;}
+nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
+.nav-logo{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;text-decoration:none;background:linear-gradient(120deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nav-links{display:flex;gap:0.2rem;align-items:center;}
+.nav-links a{font-size:0.85rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0.45rem 0.85rem;border-radius:10px;transition:all 0.2s;}
+.nav-links a:hover{background:var(--violet-light);color:var(--violet);}
+.nav-cta{padding:0.5rem 1.3rem !important;background:linear-gradient(135deg,var(--violet),var(--pink)) !important;color:white !important;border-radius:100px !important;font-weight:600 !important;font-size:0.85rem !important;box-shadow:0 4px 16px rgba(108,78,242,0.28);transition:all 0.2s !important;}
+.nav-cta:hover{transform:translateY(-1px) !important;box-shadow:0 6px 22px rgba(108,78,242,0.38) !important;background:linear-gradient(135deg,var(--violet),var(--pink)) !important;}
+
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;padding:9rem 3rem 5rem;}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 340px;gap:5rem;align-items:center;}
+
+.photo-wrap{position:relative;animation:heroPhotoIn 1s 0.5s cubic-bezier(0.22,1,0.36,1) both;}
+@keyframes heroPhotoIn{from{opacity:0;transform:translateY(40px) scale(0.95);}to{opacity:1;transform:translateY(0) scale(1);}}
+.photo-glow{position:absolute;inset:-20px;border-radius:36px;background:linear-gradient(140deg,var(--violet),var(--pink),var(--teal));opacity:0.25;filter:blur(28px);animation:glowPulse 4s ease-in-out infinite;}
+@keyframes glowPulse{0%,100%{opacity:0.22;transform:scale(1);}50%{opacity:0.35;transform:scale(1.03);}}
+.photo-card{position:relative;z-index:1;background:white;border-radius:28px;border:2px solid rgba(255,255,255,0.9);box-shadow:0 24px 64px rgba(108,78,242,0.18);overflow:hidden;}
+.photo-card img{width:100%;height:360px;object-fit:cover;object-position:top center;display:block;}
+.photo-placeholder{width:100%;height:360px;background:linear-gradient(160deg,#ede9fe,#fce7f3,#ccfbf1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;font-size:0.82rem;color:var(--muted);text-align:center;padding:2rem;}
+.photo-placeholder-icon{font-size:3rem;opacity:0.4;}
+.photo-badge{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);background:white;border-radius:14px;padding:0.6rem 1.2rem;box-shadow:0 8px 28px rgba(108,78,242,0.18);display:flex;align-items:center;gap:0.6rem;white-space:nowrap;font-size:0.82rem;font-weight:700;color:var(--text);border:1.5px solid rgba(108,78,242,0.12);}
+.badge-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.4);}}
+.chip{position:absolute;z-index:2;background:white;border-radius:12px;padding:0.5rem 0.9rem;box-shadow:0 6px 20px rgba(0,0,0,0.12);font-size:0.76rem;font-weight:700;display:flex;align-items:center;gap:0.4rem;animation:chipFloat 3s ease-in-out infinite;}
+.chip-1{top:20px;left:-20px;color:var(--violet);animation-delay:0s;}
+.chip-2{top:110px;right:-20px;color:var(--pink);animation-delay:-1.5s;}
+.chip-3{bottom:70px;left:-16px;color:var(--teal);animation-delay:-0.8s;}
+@keyframes chipFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+
+.hero-text{animation:heroTextIn 0.9s cubic-bezier(0.22,1,0.36,1) both;}
+@keyframes heroTextIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(120deg,var(--violet-light),var(--pink-light));border:1.5px solid rgba(108,78,242,0.18);border-radius:100px;padding:0.4rem 1rem;font-size:0.76rem;font-weight:700;color:var(--violet);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1.5rem;}
+.hero h1{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(3rem,6vw,5.2rem);line-height:1.06;margin-bottom:1.25rem;}
+.line-normal{font-style:normal;font-weight:600;}
+.grad-text{background:linear-gradient(120deg,var(--violet) 10%,var(--pink) 55%,var(--amber) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.82;max-width:520px;margin-bottom:2.25rem;}
+.hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:3rem;}
+.btn{padding:0.8rem 1.6rem;border-radius:14px;text-decoration:none;font-size:0.9rem;font-weight:600;display:inline-flex;align-items:center;gap:0.45rem;transition:all 0.22s;cursor:pointer;}
+.btn-grad{background:linear-gradient(135deg,var(--violet),var(--pink));color:white;box-shadow:0 6px 22px rgba(108,78,242,0.3);}
+.btn-grad:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(108,78,242,0.42);}
+.btn-white{background:white;color:var(--text);border:1.5px solid rgba(108,78,242,0.18);box-shadow:0 2px 10px rgba(0,0,0,0.06);}
+.btn-white:hover{border-color:var(--violet);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:2rem;border-top:1.5px solid rgba(108,78,242,0.12);}
+.h-stat-val{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:600;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
+.h-stat-lbl{font-size:0.76rem;color:var(--muted);font-weight:600;letter-spacing:0.04em;margin-top:0.25rem;}
+
+.section{position:relative;z-index:1;padding:6rem 3rem;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-white{background:white;}
+.section-tinted{background:rgba(108,78,242,0.03);}
+.s-eyebrow{font-size:0.74rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--violet);margin-bottom:0.6rem;}
+.s-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.9rem,3.5vw,2.8rem);line-height:1.1;margin-bottom:2.75rem;}
+
+.featured{background:white;border:1.5px solid var(--border);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--card-shadow);margin-bottom:1.5rem;transition:transform 0.3s,box-shadow 0.3s;}
+.featured:hover{transform:translateY(-4px);box-shadow:0 16px 56px rgba(108,78,242,0.16);}
+.feat-vis{background:linear-gradient(160deg,#ede9fe 0%,#fce7f3 50%,#ccfbf1 100%);padding:3rem 2.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;position:relative;overflow:hidden;}
+.feat-vis::before{content:'';position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(108,78,242,0.15),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);}
+.ring-wrap{position:relative;width:150px;height:150px;flex-shrink:0;}
+.ring-wrap svg{transform:rotate(-90deg);}
+.ring-bg{fill:none;stroke:rgba(108,78,242,0.12);stroke-width:10;}
+.ring-fill{fill:none;stroke:url(#rGrad);stroke-width:10;stroke-linecap:round;stroke-dasharray:408;stroke-dashoffset:40.8;animation:drawRing 2s 0.8s cubic-bezier(0.4,0,0.2,1) both;}
+@keyframes drawRing{from{stroke-dashoffset:408}to{stroke-dashoffset:40.8}}
+.ring-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+.ring-val{font-family:'Fraunces',serif;font-size:2rem;font-weight:600;background:linear-gradient(135deg,#6c4ef2,#d946a8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
+.ring-sub{font-size:0.68rem;color:var(--muted);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;}
+.feat-metrics{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;}
+.feat-met{background:white;border-radius:12px;padding:0.65rem 1rem;text-align:center;border:1.5px solid rgba(108,78,242,0.12);box-shadow:0 2px 12px rgba(108,78,242,0.08);}
+.feat-met-val{font-size:1.1rem;font-weight:700;color:var(--violet);}
+.feat-met-lbl{font-size:0.67rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;margin-top:0.15rem;}
+.feat-body{padding:2.75rem;display:flex;flex-direction:column;justify-content:center;}
+.feat-badge{display:inline-flex;align-items:center;gap:0.4rem;background:#dcfce7;color:#15803d;font-size:0.73rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-radius:100px;padding:0.3rem 0.85rem;margin-bottom:1rem;border:1.5px solid #bbf7d0;}
+.feat-body h3{font-family:'Fraunces',serif;font-size:1.65rem;font-weight:600;line-height:1.2;margin-bottom:0.9rem;}
+.feat-body p{font-size:0.92rem;color:var(--muted);line-height:1.78;margin-bottom:1.5rem;}
+.tags{display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:1.75rem;}
+.tag{background:var(--violet-light);color:var(--violet);font-size:0.74rem;font-weight:600;border-radius:100px;padding:0.28rem 0.75rem;border:1.5px solid rgba(108,78,242,0.18);}
+.feat-links{display:flex;gap:0.75rem;flex-wrap:wrap;}
+.feat-link{text-decoration:none;font-size:0.85rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:10px;display:inline-flex;align-items:center;gap:0.4rem;transition:all 0.2s;}
+.feat-link-primary{background:linear-gradient(135deg,var(--violet),var(--pink));color:white;box-shadow:0 4px 14px rgba(108,78,242,0.25);}
+.feat-link-primary:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(108,78,242,0.38);}
+.feat-link-ghost{border:1.5px solid var(--border);color:var(--text);background:white;}
+.feat-link-ghost:hover{border-color:var(--violet);color:var(--violet);}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;}
+.proj-card{background:white;border:1.5px solid var(--border);border-radius:20px;padding:1.75rem;transition:all 0.25s;box-shadow:0 2px 16px rgba(108,78,242,0.06);}
+.proj-card:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(108,78,242,0.13);}
+.proj-cat{font-size:0.72rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;display:inline-block;border-radius:100px;padding:0.25rem 0.75rem;margin-bottom:0.85rem;}
+.cat-ai{background:#fce7f3;color:var(--pink);border:1.5px solid rgba(217,70,168,0.2);}
+.cat-data{background:var(--teal-light);color:var(--teal);border:1.5px solid rgba(14,165,160,0.2);}
+.proj-card h4{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;margin-bottom:0.55rem;}
+.proj-card p{font-size:0.875rem;color:var(--muted);line-height:1.73;margin-bottom:1.25rem;}
+
+.timeline{position:relative;padding-left:2.25rem;}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--violet),var(--pink),var(--teal));border-radius:2px;opacity:0.3;}
+.tl-item{position:relative;margin-bottom:2.75rem;}
+.tl-dot{position:absolute;left:-2.65rem;top:6px;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--pink));border:2.5px solid var(--bg);box-shadow:0 0 0 3px rgba(108,78,242,0.2);}
+.tl-header{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:0.4rem;}
+.tl-role{font-size:1rem;font-weight:700;color:var(--text);}
+.tl-company{font-size:0.875rem;font-weight:600;background:linear-gradient(120deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.tl-date{font-size:0.78rem;color:var(--muted);font-weight:500;margin-left:auto;}
+.tl-desc{list-style:none;}
+.tl-desc li{font-size:0.875rem;color:var(--muted);line-height:1.75;padding-left:1.1rem;position:relative;margin-bottom:0.2rem;}
+.tl-desc li::before{content:'—';position:absolute;left:0;color:rgba(108,78,242,0.35);}
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.1rem;}
+.skill-card{background:white;border:1.5px solid var(--border);border-radius:18px;padding:1.5rem;transition:all 0.25s;}
+.skill-card:hover{border-color:rgba(108,78,242,0.3);transform:translateY(-2px);box-shadow:0 8px 28px rgba(108,78,242,0.1);}
+.skill-icon{width:42px;height:42px;border-radius:12px;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;font-size:1.25rem;}
+.si-v{background:var(--violet-light);}
+.si-p{background:var(--pink-light);}
+.si-t{background:var(--teal-light);}
+.si-a{background:#fef3c7;}
+.skill-card h4{font-size:0.9rem;font-weight:700;margin-bottom:0.5rem;}
+.skill-card p{font-size:0.8rem;color:var(--muted);line-height:1.65;}
+
+.contact-card{background:white;border:1.5px solid var(--border);border-radius:28px;padding:4.5rem 3.5rem;text-align:center;position:relative;overflow:hidden;box-shadow:var(--card-shadow);}
+.contact-card::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:500px;height:300px;border-radius:50%;background:linear-gradient(120deg,var(--violet),var(--pink));opacity:0.07;filter:blur(40px);}
+.contact-card h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;margin-bottom:1rem;position:relative;}
+.contact-card p{color:var(--muted);font-size:1rem;margin-bottom:2.25rem;position:relative;line-height:1.7;}
+.contact-links{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;position:relative;}
+
+footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;background:white;}
+.footer-name{font-family:'Fraunces',serif;font-size:1rem;font-weight:600;color:var(--violet);}
+.footer-links a{font-size:0.82rem;color:var(--muted);text-decoration:none;margin-left:1.5rem;}
+.footer-links a:hover{color:var(--violet);}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem;}
+  .photo-wrap{order:-1;max-width:280px;margin:0 auto;}
+  .featured{grid-template-columns:1fr;}
+  nav{padding:1rem 1.5rem;}
+  .nh{display:none;}
+  .section{padding:4rem 1.5rem;}
+  .hero{padding:7rem 1.5rem 4rem;}
+  footer{padding:1.5rem;}
+  .contact-card{padding:3rem 1.5rem;}
+}
 </style>
 </head>
 <body>
+
+<div class="orbs">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+</div>
+
 <nav>
-  <span class="name">Rahma Ras</span>
-  <div>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="mailto:rasrahma06@gmail.com">Contact</a>
+  <a href="#" class="nav-logo">Rahma Ras</a>
+  <div class="nav-links">
+    <a href="#projects" class="nh">Projects</a>
+    <a href="#experience" class="nh">Experience</a>
+    <a href="#skills" class="nh">Skills</a>
+    <a href="mailto:rasrahma06@gmail.com" class="nav-cta">Let's Talk</a>
   </div>
 </nav>
+
 <div class="hero">
-  <h1>Data Science & AI</h1>
-  <p>Graduate student at UMBC with hands-on experience in machine learning, generative AI, and clinical data systems. Built and deployed a breast cancer prediction system using TCGA RNA-seq data with SHAP explainability, and developed conversational AI agents at a Voice AI startup.</p>
-  <div class="buttons">
-    <a href="https://rasrahma06-rahmaras-er-predictor.hf.space" class="btn btn-primary">Live App</a>
-    <a href="https://github.com/RahmaRas" class="btn btn-secondary">GitHub</a>
-    <a href="https://linkedin.com/in/rahma-ras" class="btn btn-secondary">LinkedIn</a>
-  </div>
-</div>
-<hr class="divider">
-<div class="section" id="projects">
-  <h2>Projects</h2>
-  <div class="project-card">
-    <h3>ER Status Predictor — Genomic AI (DATA 606 Capstone)</h3>
-    <p>Predicted breast cancer ER status from TCGA RNA-seq data (780 patients, 20,530 genes) achieving ROC-AUC 0.95. Built an evaluation framework measuring stability, fairness, and explainability beyond accuracy. Validated on METABRIC (1,937 patients). Deployed as a live clinical web app with SHAP explanations and downloadable reports.</p>
-    <div class="tags">
-      <span class="tag">Python</span>
-      <span class="tag">Scikit-learn</span>
-      <span class="tag">SHAP</span>
-      <span class="tag">SMOTE</span>
-      <span class="tag">Streamlit</span>
-      <span class="tag">TCGA</span>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <div class="badge-dot"></div>
+        Open to opportunities · UMBC '25
+      </div>
+      <h1>
+        <span class="line-normal">Hi, I'm</span><br>
+        <span class="grad-text">Rahma Ras</span>
+      </h1>
+      <p class="hero-sub">Data scientist building AI systems that go beyond accuracy — measuring stability, fairness, and explainability to make machine learning trustworthy in production.</p>
+      <div class="hero-btns">
+        <a href="https://rasrahma06-rahmaras-er-predictor.hf.space" target="_blank" class="btn btn-grad">&#9654; Live App</a>
+        <a href="https://github.com/RahmaRas" target="_blank" class="btn btn-white">GitHub</a>
+        <a href="https://linkedin.com/in/rahma-ras" target="_blank" class="btn btn-white">LinkedIn</a>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat"><div class="h-stat-val">0.95</div><div class="h-stat-lbl">Best AUC Score</div></div>
+        <div class="h-stat"><div class="h-stat-val">1,937</div><div class="h-stat-lbl">Validation Patients</div></div>
+        <div class="h-stat"><div class="h-stat-val">20K+</div><div class="h-stat-lbl">Gene Features</div></div>
+        <div class="h-stat"><div class="h-stat-val">3+</div><div class="h-stat-lbl">Years Experience</div></div>
+      </div>
     </div>
-    <a href="https://github.com/RahmaRas/er-status-predictor">View on GitHub →</a>
-  </div>
-  <div class="project-card">
-    <h3>Conversational AI Agent — Genaiva</h3>
-    <p>Developed conversational AI agents using LangChain and LangGraph at a Voice AI startup. Implemented RAG pipelines with vector databases and integrated STT/TTS APIs including Twilio and Deepgram for real-time inference workflows.</p>
-    <div class="tags">
-      <span class="tag">LangChain</span>
-      <span class="tag">LangGraph</span>
-      <span class="tag">RAG</span>
-      <span class="tag">Python</span>
-      <span class="tag">Twilio</span>
-    </div>
-  </div>
-</div>
-<hr class="divider">
-<div class="section" id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-group">
-      <h4>Machine Learning</h4>
-      <p>Scikit-learn, SHAP, SMOTE, Random Forest, cross-validation, model evaluation</p>
-    </div>
-    <div class="skill-group">
-      <h4>Generative AI</h4>
-      <p>LLMs, RAG, LangChain, LangGraph, prompt engineering, BioGPT</p>
-    </div>
-    <div class="skill-group">
-      <h4>Data Engineering</h4>
-      <p>Python, SQL, Pandas, NumPy, Hadoop, Spark, Streamlit</p>
-    </div>
-    <div class="skill-group">
-      <h4>Tools & Platforms</h4>
-      <p>GitHub, Docker, Hugging Face, Tableau, Google Workspace</p>
+
+    <div class="photo-wrap">
+      <div class="photo-glow"></div>
+      <div class="chip chip-1">🧬 Genomic AI</div>
+      <div class="chip chip-2">🤖 LLMs + RAG</div>
+      <div class="chip chip-3">📊 SHAP</div>
+      <div class="photo-card">
+        <img src="https://rahma-ras.github.io/assets/img/profile.jpg"
+             onerror="this.style.display='none';document.getElementById('ph').style.display='flex';"
+             alt="Rahma Ras" />
+        <div id="ph" class="photo-placeholder">
+          <div class="photo-placeholder-icon">👩‍💻</div>
+          <div style="font-weight:600;">Add your photo!</div>
+          <div>Upload photo.jpg to your GitHub repo</div>
+        </div>
+        <div class="photo-badge">
+          <div class="badge-dot"></div>
+          Open to work
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<hr class="divider">
+
+<section class="section section-white" id="projects">
+  <div class="section-inner">
+    <div class="reveal"><div class="s-eyebrow">Work</div><div class="s-title">Featured Projects</div></div>
+    <div class="featured reveal">
+      <div class="feat-vis">
+        <svg width="0" height="0" style="position:absolute">
+          <defs>
+            <linearGradient id="rGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6c4ef2"/>
+              <stop offset="100%" stop-color="#d946a8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="ring-wrap">
+          <svg width="150" height="150" viewBox="0 0 150 150">
+            <circle class="ring-bg" cx="75" cy="75" r="65"/>
+            <circle class="ring-fill" cx="75" cy="75" r="65"/>
+          </svg>
+          <div class="ring-center">
+            <div class="ring-val">0.95</div>
+            <div class="ring-sub">ROC-AUC</div>
+          </div>
+        </div>
+        <div class="feat-metrics">
+          <div class="feat-met"><div class="feat-met-val">780</div><div class="feat-met-lbl">Patients</div></div>
+          <div class="feat-met"><div class="feat-met-val">0.696</div><div class="feat-met-lbl">METABRIC</div></div>
+          <div class="feat-met"><div class="feat-met-val">3.6%</div><div class="feat-met-lbl">Bias Gap</div></div>
+        </div>
+      </div>
+      <div class="feat-body">
+        <div class="feat-badge">✦ Capstone · Deployed Live</div>
+        <h3>ER Status Predictor — Trustworthy Genomic AI</h3>
+        <p>Predicted breast cancer ER status from TCGA RNA-seq data (780 patients, 20,530 genes). Built a full evaluation framework measuring stability via Jaccard similarity, bias via SMOTE, and explainability via SHAP — validated externally on 1,937 METABRIC patients.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">SHAP</span>
+          <span class="tag">SMOTE</span><span class="tag">Streamlit</span><span class="tag">BioGPT</span>
+          <span class="tag">Docker</span><span class="tag">TCGA</span>
+        </div>
+        <div class="feat-links">
+          <a href="https://rasrahma06-rahmaras-er-predictor.hf.space" target="_blank" class="feat-link feat-link-primary">&#9654; Live App</a>
+          <a href="https://github.com/RahmaRas/er-status-predictor" target="_blank" class="feat-link feat-link-ghost">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+      <div class="proj-card reveal d1">
+        <div class="proj-cat cat-ai">AI Agent</div>
+        <h4>Conversational AI Agent</h4>
+        <p>Built voice-first AI agents with LangChain and LangGraph at Genaiva. Implemented RAG pipelines with FAISS vector databases and Twilio/Deepgram STT-TTS for real-time inference.</p>
+        <div class="tags">
+          <span class="tag" style="background:#fce7f3;color:var(--pink);border-color:rgba(217,70,168,0.18);">LangChain</span>
+          <span class="tag" style="background:#fce7f3;color:var(--pink);border-color:rgba(217,70,168,0.18);">LangGraph</span>
+          <span class="tag" style="background:#fce7f3;color:var(--pink);border-color:rgba(217,70,168,0.18);">RAG</span>
+          <span class="tag" style="background:#fce7f3;color:var(--pink);border-color:rgba(217,70,168,0.18);">Twilio</span>
+        </div>
+      </div>
+      <div class="proj-card reveal d2">
+        <div class="proj-cat cat-data">Analytics</div>
+        <h4>Healthcare Data Analytics</h4>
+        <p>Analyzed clinical research datasets at Johns Hopkins ICTR for NIH-funded studies. Built REDCap databases and Tableau dashboards for patient outcome reporting and clinical KPIs.</p>
+        <div class="tags">
+          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">SQL</span>
+          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">Tableau</span>
+          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">REDCap</span>
+          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">Python</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tinted" id="experience">
+  <div class="section-inner">
+    <div class="reveal"><div class="s-eyebrow">Career</div><div class="s-title">Experience</div></div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-header"><span class="tl-role">AI/ML Engineer</span><span class="tl-company">Genaiva</span><span class="tl-date">Jan 2025 – Present</span></div>
+        <ul class="tl-desc">
+          <li>Built conversational AI agents using LangChain and LangGraph for a voice-first B2B platform</li>
+          <li>Implemented RAG pipelines with FAISS vector databases for dynamic knowledge retrieval</li>
+          <li>Integrated real-time STT/TTS with Twilio and Deepgram for sub-second inference</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal d1">
+        <div class="tl-dot"></div>
+        <div class="tl-header"><span class="tl-role">M.P.S. Data Science</span><span class="tl-company">UMBC</span><span class="tl-date">Aug 2023 – May 2025</span></div>
+        <ul class="tl-desc">
+          <li>GPA 3.7 · Machine Learning, NLP, Big Data, Statistical Analysis</li>
+          <li>Capstone: breast cancer genomic AI · AUC 0.95 · validated on 1,937 patients</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal d2">
+        <div class="tl-dot"></div>
+        <div class="tl-header"><span class="tl-role">Research Data Analyst</span><span class="tl-company">Johns Hopkins ICTR</span><span class="tl-date">2022 – 2023</span></div>
+        <ul class="tl-desc">
+          <li>Managed clinical datasets for NIH-funded studies</li>
+          <li>Built REDCap databases and Tableau dashboards for patient outcome reporting</li>
+          <li>Collaborated with physicians on data collection protocols and IRB documentation</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal d3">
+        <div class="tl-dot"></div>
+        <div class="tl-header"><span class="tl-role">B.S. Information Systems</span><span class="tl-company">UMBC</span><span class="tl-date">2018 – 2022</span></div>
+        <ul class="tl-desc"><li>Foundation in databases, systems analysis, and software development</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-white" id="skills">
+  <div class="section-inner">
+    <div class="reveal"><div class="s-eyebrow">Toolkit</div><div class="s-title">Skills</div></div>
+    <div class="skills-grid">
+      <div class="skill-card reveal"><div class="skill-icon si-v">🧬</div><h4>Machine Learning</h4><p>Scikit-learn · SHAP · SMOTE · Random Forest · XGBoost · cross-validation · model evaluation</p></div>
+      <div class="skill-card reveal d1"><div class="skill-icon si-p">🤖</div><h4>Generative AI</h4><p>LLMs · RAG · LangChain · LangGraph · prompt engineering · BioGPT · FAISS</p></div>
+      <div class="skill-card reveal d2"><div class="skill-icon si-t">🐍</div><h4>Languages & Data</h4><p>Python · SQL · R · Pandas · NumPy · Matplotlib · Seaborn · Jupyter</p></div>
+      <div class="skill-card reveal d3"><div class="skill-icon si-a">☁️</div><h4>Platforms & Tools</h4><p>GitHub · Docker · Hugging Face · Streamlit · Tableau · REDCap · Google Workspace</p></div>
+      <div class="skill-card reveal"><div class="skill-icon si-v">📊</div><h4>Big Data</h4><p>Hadoop · Spark · Hive · HDFS · distributed computing pipelines</p></div>
+      <div class="skill-card reveal d1"><div class="skill-icon si-t">🏥</div><h4>Healthcare & Bio</h4><p>TCGA · METABRIC · RNA-seq analysis · clinical data systems · research informatics</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tinted">
+  <div class="section-inner">
+    <div class="contact-card reveal">
+      <h2>Let's work together.</h2>
+      <p>Open to full-time roles in data science, AI engineering, and computational research.<br>Based in Maryland · open to remote.</p>
+      <div class="contact-links">
+        <a href="mailto:rasrahma06@gmail.com" class="btn btn-grad">rasrahma06@gmail.com</a>
+        <a href="https://linkedin.com/in/rahma-ras" target="_blank" class="btn btn-white">LinkedIn</a>
+        <a href="https://github.com/RahmaRas" target="_blank" class="btn btn-white">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <p>
-    <a href="mailto:rasrahma06@gmail.com">rasrahma06@gmail.com</a>
-    <a href="https://github.com/RahmaRas">GitHub</a>
-    <a href="https://linkedin.com/in/rahma-ras">LinkedIn</a>
-  </p>
-  <p style="margin-top: 0.5rem;">Rahma Ras · UMBC Data Science</p>
+  <span class="footer-name">Rahma Ras</span>
+  <div class="footer-links">
+    <a href="mailto:rasrahma06@gmail.com">Email</a>
+    <a href="https://github.com/RahmaRas" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/rahma-ras" target="_blank">LinkedIn</a>
+  </div>
 </footer>
+
+<script>
+const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+window.addEventListener('scroll', () => document.querySelector('nav').classList.toggle('scrolled', scrollY > 40));
+</script>
 </body>
 </html>
