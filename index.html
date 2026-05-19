@@ -85,7 +85,6 @@ nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
 .s-eyebrow{font-size:0.74rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--violet);margin-bottom:0.6rem;}
 .s-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.9rem,3.5vw,2.8rem);line-height:1.1;margin-bottom:2.75rem;}
 
-/* FEATURED PROJECT */
 .featured{background:white;border:1.5px solid var(--border);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--card-shadow);margin-bottom:1.5rem;transition:transform 0.3s,box-shadow 0.3s;}
 .featured:hover{transform:translateY(-4px);box-shadow:0 16px 56px rgba(108,78,242,0.16);}
 .feat-vis{background:linear-gradient(160deg,#ede9fe 0%,#fce7f3 50%,#ccfbf1 100%);padding:3rem 2.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;position:relative;overflow:hidden;}
@@ -126,7 +125,6 @@ nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
 .proj-card h4{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;margin-bottom:0.55rem;}
 .proj-card p{font-size:0.875rem;color:var(--muted);line-height:1.73;margin-bottom:1.25rem;}
 
-/* TIMELINE */
 .timeline{position:relative;padding-left:2.25rem;}
 .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--violet),var(--pink),var(--teal));border-radius:2px;opacity:0.3;}
 .tl-item{position:relative;margin-bottom:2.75rem;}
@@ -139,7 +137,6 @@ nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
 .tl-desc li{font-size:0.875rem;color:var(--muted);line-height:1.75;padding-left:1.1rem;position:relative;margin-bottom:0.2rem;}
 .tl-desc li::before{content:'—';position:absolute;left:0;color:rgba(108,78,242,0.35);}
 
-/* EDUCATION CARDS */
 .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-bottom:2rem;}
 .edu-card{background:white;border:1.5px solid var(--border);border-radius:20px;padding:1.75rem;box-shadow:0 2px 16px rgba(108,78,242,0.06);transition:all 0.25s;position:relative;overflow:hidden;}
 .edu-card:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(108,78,242,0.13);}
@@ -150,7 +147,6 @@ nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
 .edu-courses{font-size:0.78rem;color:var(--muted);line-height:1.65;}
 .edu-courses strong{color:var(--text);font-weight:600;}
 
-/* SKILLS */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.1rem;}
 .skill-card{background:white;border:1.5px solid var(--border);border-radius:18px;padding:1.5rem;transition:all 0.25s;}
 .skill-card:hover{border-color:rgba(108,78,242,0.3);transform:translateY(-2px);box-shadow:0 8px 28px rgba(108,78,242,0.1);}
@@ -162,7 +158,6 @@ nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
 .skill-card h4{font-size:0.9rem;font-weight:700;margin-bottom:0.5rem;}
 .skill-card p{font-size:0.8rem;color:var(--muted);line-height:1.65;}
 
-/* CERTIFICATIONS */
 .certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
 .cert-card{background:white;border:1.5px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:0.85rem;box-shadow:0 2px 12px rgba(108,78,242,0.06);transition:all 0.2s;}
 .cert-card:hover{border-color:rgba(108,78,242,0.3);transform:translateY(-2px);}
@@ -170,7 +165,6 @@ nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
 .cert-name{font-size:0.82rem;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:0.2rem;}
 .cert-issuer{font-size:0.74rem;color:var(--muted);}
 
-/* LEADERSHIP */
 .lead-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;}
 .lead-card{background:white;border:1.5px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;box-shadow:0 2px 12px rgba(108,78,242,0.06);transition:all 0.2s;display:flex;align-items:center;gap:0.85rem;}
 .lead-card:hover{border-color:rgba(108,78,242,0.3);transform:translateY(-2px);}
@@ -179,11 +173,9 @@ nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
 .li-p{background:var(--pink-light);}
 .li-t{background:var(--teal-light);}
 .li-a{background:#fef3c7;}
-.lead-text{}
 .lead-title{font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:0.15rem;}
 .lead-sub{font-size:0.76rem;color:var(--muted);}
 
-/* CONTACT */
 .contact-card{background:white;border:1.5px solid var(--border);border-radius:28px;padding:4.5rem 3.5rem;text-align:center;position:relative;overflow:hidden;box-shadow:var(--card-shadow);}
 .contact-card::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:500px;height:300px;border-radius:50%;background:linear-gradient(120deg,var(--violet),var(--pink));opacity:0.07;filter:blur(40px);}
 .contact-card h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;margin-bottom:1rem;position:relative;}
@@ -232,7 +224,6 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-text">
@@ -257,7 +248,6 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
         <div class="h-stat"><div class="h-stat-val">15+</div><div class="h-stat-lbl">Certifications</div></div>
       </div>
     </div>
-
     <div class="photo-wrap">
       <div class="photo-glow"></div>
       <div class="chip chip-1">🧬 Genomic AI</div>
@@ -281,11 +271,9 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
   </div>
 </div>
 
-<!-- PROJECTS -->
 <section class="section section-white" id="projects">
   <div class="section-inner">
     <div class="reveal"><div class="s-eyebrow">Work</div><div class="s-title">Featured Projects</div></div>
-
     <div class="featured reveal">
       <div class="feat-vis">
         <svg width="0" height="0" style="position:absolute">
@@ -315,11 +303,11 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
       <div class="feat-body">
         <div class="feat-badge">✦ Capstone · Deployed Live</div>
         <h3>Interpretable ML for Gene-Based Phenotype Prediction</h3>
-        <p>Developed ML models (Logistic Regression, Random Forest, XGBoost) to predict breast cancer tumor subtypes from RNA-seq gene expression data. Reduced ~20,000 genes to 200 key features. Used SHAP and InterpretML for biological explainability, validated with Stratified Cross-Validation and ROC-AUC metrics.</p>
+        <p>Developed ML models to predict breast cancer tumor subtypes from RNA-seq gene expression data. Reduced ~20,000 genes to 200 key features using ANOVA and LASSO. Applied SHAP for biological explainability, validated externally on 1,937 METABRIC patients.</p>
         <div class="tags">
           <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">SHAP</span>
-          <span class="tag">XGBoost</span><span class="tag">InterpretML</span><span class="tag">SMOTE</span>
-          <span class="tag">Streamlit</span><span class="tag">TCGA RNA-seq</span>
+          <span class="tag">XGBoost</span><span class="tag">SMOTE</span><span class="tag">Streamlit</span>
+          <span class="tag">TCGA RNA-seq</span><span class="tag">Docker</span>
         </div>
         <div class="feat-links">
           <a href="https://rasrahma06-rahmaras-er-predictor.hf.space" target="_blank" class="feat-link feat-link-primary">&#9654; Live App</a>
@@ -327,7 +315,6 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
         </div>
       </div>
     </div>
-
     <div class="projects-grid">
       <div class="proj-card reveal d1">
         <div class="proj-cat cat-ai">AI Agent</div>
@@ -345,10 +332,8 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
         <h4>Variational Autoencoder — Facial Features</h4>
         <p>Built and trained a VAE on the CelebA dataset to learn latent facial feature representations, exploring generative modelling and dimensionality reduction techniques.</p>
         <div class="tags">
-          <span class="tag">PyTorch</span>
-          <span class="tag">VAE</span>
-          <span class="tag">CelebA</span>
-          <span class="tag">Generative AI</span>
+          <span class="tag">PyTorch</span><span class="tag">VAE</span>
+          <span class="tag">CelebA</span><span class="tag">Generative AI</span>
         </div>
       </div>
       <div class="proj-card reveal d3">
@@ -358,7 +343,7 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
         <div class="tags">
           <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">NLP</span>
           <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">Classification</span>
-          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">Cross-Validation</span>
+          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">Python</span>
         </div>
       </div>
       <div class="proj-card reveal d4">
@@ -375,12 +360,10 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section class="section section-tinted" id="experience">
   <div class="section-inner">
     <div class="reveal"><div class="s-eyebrow">Career</div><div class="s-title">Experience</div></div>
     <div class="timeline">
-
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-header"><span class="tl-role">Data Science Intern</span><span class="tl-company">Genaiva — Voice AI Startup</span><span class="tl-date">2025</span></div>
@@ -389,10 +372,8 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
           <li>Implemented RAG pipelines with vector databases for dynamic knowledge retrieval</li>
           <li>Integrated STT/TTS APIs including Twilio and Deepgram for real-time inference</li>
           <li>Assisted debugging real-time inference pipelines with structured logging and health checks</li>
-          <li>Contributed to AI-powered telephony system design and workflow optimization</li>
         </ul>
       </div>
-
       <div class="tl-item reveal d1">
         <div class="tl-dot"></div>
         <div class="tl-header"><span class="tl-role">Project Manager</span><span class="tl-company">SphereHub</span><span class="tl-date">2025 – 2026</span></div>
@@ -400,29 +381,24 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
           <li>Designed data collection workflows using Google Forms and Apps Script</li>
           <li>Automated onboarding processes for student housing platform users</li>
           <li>Led weekly intern meetings and coordinated cross-functional deliverables</li>
-          <li>Monitored project milestones and ensured alignment with product roadmap</li>
         </ul>
       </div>
-
       <div class="tl-item reveal d2">
         <div class="tl-dot"></div>
         <div class="tl-header"><span class="tl-role">Marketing & Data Intern</span><span class="tl-company">Amplify MedTech</span><span class="tl-date">Spring–Summer 2025</span></div>
         <ul class="tl-desc">
-          <li>Built and analyzed performance dashboards using Google Sheets</li>
           <li>Improved audience engagement by 30% through data-driven campaign optimization</li>
-          <li>Tracked KPIs and generated structured reports for executive review</li>
+          <li>Built and analyzed performance dashboards using Google Sheets</li>
           <li>Managed digital outreach campaigns reaching 1,000+ MedTech professionals</li>
         </ul>
       </div>
-
       <div class="tl-item reveal d3">
         <div class="tl-dot"></div>
         <div class="tl-header"><span class="tl-role">Assistant Teacher</span><span class="tl-company">Catonsville Elementary — The Y of Central Maryland</span><span class="tl-date">2022 – 2023</span></div>
         <ul class="tl-desc">
-          <li>Supported students with homework and educational activities</li>
+          <li>Supported students with homework, educational activities, and mentorship</li>
         </ul>
       </div>
-
       <div class="tl-item reveal d4">
         <div class="tl-dot"></div>
         <div class="tl-header"><span class="tl-role">Data Analyst & Scheduler</span><span class="tl-company">M.I. Memorial Dental Hospital</span><span class="tl-date">2009 – 2011</span></div>
@@ -431,12 +407,10 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
           <li>Generated operational reports to support data-driven decision-making</li>
         </ul>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section class="section section-white" id="education">
   <div class="section-inner">
     <div class="reveal"><div class="s-eyebrow">Academic</div><div class="s-title">Education</div></div>
@@ -445,19 +419,18 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
         <div class="edu-degree">Master's in Applied Data Science</div>
         <div class="edu-school">University of Maryland, Baltimore County (UMBC)</div>
         <div class="edu-date">August 2024 – Expected December 2026</div>
-        <div class="edu-courses"><strong>Coursework:</strong> Big Data Processing (Hadoop, Spark) · Data Management (SQL) · Generative AI (LLMs, Transformers) · Math Foundations of ML · Statistical Data Analysis · Data Science for Finance · Ethical Issues in Data Science · Probability & Statistics · Capstone in Data Science</div>
+        <div class="edu-courses"><strong>Coursework:</strong> Big Data Processing · Data Management · Generative AI · Math Foundations of ML · Statistical Data Analysis · Data Science for Finance · Ethical Issues in Data Science · Probability & Statistics · Capstone in Data Science</div>
       </div>
       <div class="edu-card">
         <div class="edu-degree">B.S. Biological Science</div>
         <div class="edu-school">Undergraduate Degree</div>
         <div class="edu-date">Foundation in life sciences and research methodology</div>
-        <div class="edu-courses"><strong>Background:</strong> Biological sciences · Research methods · Scientific analysis — forming the basis for biomedical AI applications</div>
+        <div class="edu-courses"><strong>Background:</strong> Biological sciences · Research methods · Scientific analysis — forming the foundation for biomedical AI applications</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
 <section class="section section-tinted" id="skills">
   <div class="section-inner">
     <div class="reveal"><div class="s-eyebrow">Toolkit</div><div class="s-title">Skills</div></div>
@@ -465,14 +438,13 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
       <div class="skill-card reveal"><div class="skill-icon si-v">🧬</div><h4>Machine Learning</h4><p>Scikit-learn · SHAP · InterpretML · XGBoost · Random Forest · cross-validation · statistical modeling</p></div>
       <div class="skill-card reveal d1"><div class="skill-icon si-p">🤖</div><h4>Generative AI</h4><p>LLMs · Transformers · RAG · LangChain · LangGraph · prompt engineering · vector databases</p></div>
       <div class="skill-card reveal d2"><div class="skill-icon si-t">🐍</div><h4>Programming & Data</h4><p>Python · SQL · Pandas · NumPy · Tableau · relational database design</p></div>
-      <div class="skill-card reveal d3"><div class="skill-icon si-a">☁️</div><h4>Big Data & Systems</h4><p>Hadoop · Apache Spark · distributed systems · STT/TTS APIs · real-time inference workflows</p></div>
+      <div class="skill-card reveal d3"><div class="skill-icon si-a">☁️</div><h4>Big Data & Systems</h4><p>Hadoop · Apache Spark · distributed systems · STT/TTS APIs · real-time inference</p></div>
       <div class="skill-card reveal"><div class="skill-icon si-v">🏥</div><h4>Healthcare & Bio</h4><p>RNA-seq analysis · TCGA datasets · biomedical AI · clinical data · SMOTE · bias correction</p></div>
-      <div class="skill-card reveal d1"><div class="skill-icon si-p">🛠️</div><h4>Tools & Platforms</h4><p>GitHub · Docker · Hugging Face · Streamlit · Google Workspace · MS Office · Canva · HTML</p></div>
+      <div class="skill-card reveal d1"><div class="skill-icon si-p">🛠️</div><h4>Tools & Platforms</h4><p>GitHub · Docker · Hugging Face · Streamlit · Google Workspace · MS Office · HTML · Canva</p></div>
     </div>
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
 <section class="section section-white">
   <div class="section-inner">
     <div class="reveal"><div class="s-eyebrow">Credentials</div><div class="s-title">Certifications</div></div>
@@ -489,22 +461,20 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
   </div>
 </section>
 
-<!-- LEADERSHIP -->
 <section class="section section-tinted">
   <div class="section-inner">
     <div class="reveal"><div class="s-eyebrow">Community</div><div class="s-title">Leadership & Engagement</div></div>
     <div class="lead-grid">
-      <div class="lead-card reveal"><div class="lead-icon li-v">💰</div><div class="lead-text"><div class="lead-title">Treasurer</div><div class="lead-sub">Biocomputational Engineering Club, USM</div></div></div>
-      <div class="lead-card reveal d1"><div class="lead-icon li-p">🎓</div><div class="lead-text"><div class="lead-title">Member</div><div class="lead-sub">Graduate Student Association, UMBC</div></div></div>
-      <div class="lead-card reveal d2"><div class="lead-icon li-t">🎤</div><div class="lead-text"><div class="lead-title">Macklin Public Speaking Certificate</div><div class="lead-sub">2024</div></div></div>
-      <div class="lead-card reveal d3"><div class="lead-icon li-a">🧾</div><div class="lead-text"><div class="lead-title">IRS Certified Volunteer</div><div class="lead-sub">VITA Tax Services</div></div></div>
-      <div class="lead-card reveal"><div class="lead-icon li-v">🌙</div><div class="lead-text"><div class="lead-title">Youth Program Coordinator</div><div class="lead-sub">BIS Ramadan Program 2026</div></div></div>
-      <div class="lead-card reveal d1"><div class="lead-icon li-p">👥</div><div class="lead-text"><div class="lead-title">Youth Leader</div><div class="lead-sub">Community engagement & mentorship</div></div></div>
+      <div class="lead-card reveal"><div class="lead-icon li-v">💰</div><div><div class="lead-title">Treasurer</div><div class="lead-sub">Biocomputational Engineering Club, USM</div></div></div>
+      <div class="lead-card reveal d1"><div class="lead-icon li-p">🎓</div><div><div class="lead-title">Member</div><div class="lead-sub">Graduate Student Association, UMBC</div></div></div>
+      <div class="lead-card reveal d2"><div class="lead-icon li-t">🎤</div><div><div class="lead-title">Macklin Public Speaking Certificate</div><div class="lead-sub">2024</div></div></div>
+      <div class="lead-card reveal d3"><div class="lead-icon li-a">🧾</div><div><div class="lead-title">IRS Certified Volunteer</div><div class="lead-sub">VITA Tax Services</div></div></div>
+      <div class="lead-card reveal"><div class="lead-icon li-v">🌙</div><div><div class="lead-title">Youth Program Coordinator</div><div class="lead-sub">BIS Ramadan Program 2026</div></div></div>
+      <div class="lead-card reveal d1"><div class="lead-icon li-p">👥</div><div><div class="lead-title">Youth Leader</div><div class="lead-sub">Community engagement & mentorship</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section section-white">
   <div class="section-inner">
     <div class="contact-card reveal">
