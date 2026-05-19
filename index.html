@@ -52,7 +52,6 @@ nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
 .photo-card{position:relative;z-index:1;background:white;border-radius:28px;border:2px solid rgba(255,255,255,0.9);box-shadow:0 24px 64px rgba(108,78,242,0.18);overflow:hidden;}
 .photo-card img{width:100%;height:360px;object-fit:cover;object-position:top center;display:block;}
 .photo-placeholder{width:100%;height:360px;background:linear-gradient(160deg,#ede9fe,#fce7f3,#ccfbf1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;font-size:0.82rem;color:var(--muted);text-align:center;padding:2rem;}
-.photo-placeholder-icon{font-size:3rem;opacity:0.4;}
 .photo-badge{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);background:white;border-radius:14px;padding:0.6rem 1.2rem;box-shadow:0 8px 28px rgba(108,78,242,0.18);display:flex;align-items:center;gap:0.6rem;white-space:nowrap;font-size:0.82rem;font-weight:700;color:var(--text);border:1.5px solid rgba(108,78,242,0.12);}
 .badge-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.4);}}
@@ -86,6 +85,7 @@ nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
 .s-eyebrow{font-size:0.74rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--violet);margin-bottom:0.6rem;}
 .s-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.9rem,3.5vw,2.8rem);line-height:1.1;margin-bottom:2.75rem;}
 
+/* FEATURED PROJECT */
 .featured{background:white;border:1.5px solid var(--border);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--card-shadow);margin-bottom:1.5rem;transition:transform 0.3s,box-shadow 0.3s;}
 .featured:hover{transform:translateY(-4px);box-shadow:0 16px 56px rgba(108,78,242,0.16);}
 .feat-vis{background:linear-gradient(160deg,#ede9fe 0%,#fce7f3 50%,#ccfbf1 100%);padding:3rem 2.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;position:relative;overflow:hidden;}
@@ -115,15 +115,18 @@ nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
 .feat-link-ghost{border:1.5px solid var(--border);color:var(--text);background:white;}
 .feat-link-ghost:hover{border-color:var(--violet);color:var(--violet);}
 
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;}
 .proj-card{background:white;border:1.5px solid var(--border);border-radius:20px;padding:1.75rem;transition:all 0.25s;box-shadow:0 2px 16px rgba(108,78,242,0.06);}
 .proj-card:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(108,78,242,0.13);}
 .proj-cat{font-size:0.72rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;display:inline-block;border-radius:100px;padding:0.25rem 0.75rem;margin-bottom:0.85rem;}
 .cat-ai{background:#fce7f3;color:var(--pink);border:1.5px solid rgba(217,70,168,0.2);}
 .cat-data{background:var(--teal-light);color:var(--teal);border:1.5px solid rgba(14,165,160,0.2);}
+.cat-ml{background:var(--violet-light);color:var(--violet);border:1.5px solid rgba(108,78,242,0.2);}
+.cat-ethics{background:#fef3c7;color:#92400e;border:1.5px solid rgba(245,158,11,0.25);}
 .proj-card h4{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;margin-bottom:0.55rem;}
 .proj-card p{font-size:0.875rem;color:var(--muted);line-height:1.73;margin-bottom:1.25rem;}
 
+/* TIMELINE */
 .timeline{position:relative;padding-left:2.25rem;}
 .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--violet),var(--pink),var(--teal));border-radius:2px;opacity:0.3;}
 .tl-item{position:relative;margin-bottom:2.75rem;}
@@ -136,6 +139,18 @@ nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
 .tl-desc li{font-size:0.875rem;color:var(--muted);line-height:1.75;padding-left:1.1rem;position:relative;margin-bottom:0.2rem;}
 .tl-desc li::before{content:'—';position:absolute;left:0;color:rgba(108,78,242,0.35);}
 
+/* EDUCATION CARDS */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-bottom:2rem;}
+.edu-card{background:white;border:1.5px solid var(--border);border-radius:20px;padding:1.75rem;box-shadow:0 2px 16px rgba(108,78,242,0.06);transition:all 0.25s;position:relative;overflow:hidden;}
+.edu-card:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(108,78,242,0.13);}
+.edu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--violet),var(--pink));}
+.edu-degree{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;margin-bottom:0.3rem;}
+.edu-school{font-size:0.875rem;font-weight:600;background:linear-gradient(120deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.3rem;}
+.edu-date{font-size:0.76rem;color:var(--muted);font-weight:500;margin-bottom:1rem;}
+.edu-courses{font-size:0.78rem;color:var(--muted);line-height:1.65;}
+.edu-courses strong{color:var(--text);font-weight:600;}
+
+/* SKILLS */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.1rem;}
 .skill-card{background:white;border:1.5px solid var(--border);border-radius:18px;padding:1.5rem;transition:all 0.25s;}
 .skill-card:hover{border-color:rgba(108,78,242,0.3);transform:translateY(-2px);box-shadow:0 8px 28px rgba(108,78,242,0.1);}
@@ -147,6 +162,28 @@ nav.scrolled{box-shadow:0 4px 30px rgba(108,78,242,0.1);}
 .skill-card h4{font-size:0.9rem;font-weight:700;margin-bottom:0.5rem;}
 .skill-card p{font-size:0.8rem;color:var(--muted);line-height:1.65;}
 
+/* CERTIFICATIONS */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
+.cert-card{background:white;border:1.5px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:0.85rem;box-shadow:0 2px 12px rgba(108,78,242,0.06);transition:all 0.2s;}
+.cert-card:hover{border-color:rgba(108,78,242,0.3);transform:translateY(-2px);}
+.cert-icon{width:36px;height:36px;border-radius:10px;background:var(--violet-light);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.cert-name{font-size:0.82rem;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:0.2rem;}
+.cert-issuer{font-size:0.74rem;color:var(--muted);}
+
+/* LEADERSHIP */
+.lead-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;}
+.lead-card{background:white;border:1.5px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;box-shadow:0 2px 12px rgba(108,78,242,0.06);transition:all 0.2s;display:flex;align-items:center;gap:0.85rem;}
+.lead-card:hover{border-color:rgba(108,78,242,0.3);transform:translateY(-2px);}
+.lead-icon{font-size:1.3rem;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.li-v{background:var(--violet-light);}
+.li-p{background:var(--pink-light);}
+.li-t{background:var(--teal-light);}
+.li-a{background:#fef3c7;}
+.lead-text{}
+.lead-title{font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:0.15rem;}
+.lead-sub{font-size:0.76rem;color:var(--muted);}
+
+/* CONTACT */
 .contact-card{background:white;border:1.5px solid var(--border);border-radius:28px;padding:4.5rem 3.5rem;text-align:center;position:relative;overflow:hidden;box-shadow:var(--card-shadow);}
 .contact-card::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:500px;height:300px;border-radius:50%;background:linear-gradient(120deg,var(--violet),var(--pink));opacity:0.07;filter:blur(40px);}
 .contact-card h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;margin-bottom:1rem;position:relative;}
@@ -160,7 +197,7 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
 
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .reveal.visible{opacity:1;transform:none;}
-.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}
+.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}.d4{transition-delay:0.4s;}
 
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:3rem;}
@@ -189,23 +226,25 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
   <div class="nav-links">
     <a href="#projects" class="nh">Projects</a>
     <a href="#experience" class="nh">Experience</a>
+    <a href="#education" class="nh">Education</a>
     <a href="#skills" class="nh">Skills</a>
     <a href="mailto:rasrahma06@gmail.com" class="nav-cta">Let's Talk</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-eyebrow">
         <div class="badge-dot"></div>
-        Open to opportunities · UMBC '25
+        Open to opportunities · UMBC Applied Data Science
       </div>
       <h1>
         <span class="line-normal">Hi, I'm</span><br>
         <span class="grad-text">Rahma Ras</span>
       </h1>
-      <p class="hero-sub">Data scientist building AI systems that go beyond accuracy — measuring stability, fairness, and explainability to make machine learning trustworthy in production.</p>
+      <p class="hero-sub">Master's student in Applied Data Science at UMBC building scalable, production-ready AI systems — from genomic machine learning to conversational AI agents with RAG pipelines.</p>
       <div class="hero-btns">
         <a href="https://rasrahma06-rahmaras-er-predictor.hf.space" target="_blank" class="btn btn-grad">&#9654; Live App</a>
         <a href="https://github.com/RahmaRas" target="_blank" class="btn btn-white">GitHub</a>
@@ -215,7 +254,7 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
         <div class="h-stat"><div class="h-stat-val">0.95</div><div class="h-stat-lbl">Best AUC Score</div></div>
         <div class="h-stat"><div class="h-stat-val">1,937</div><div class="h-stat-lbl">Validation Patients</div></div>
         <div class="h-stat"><div class="h-stat-val">20K+</div><div class="h-stat-lbl">Gene Features</div></div>
-        <div class="h-stat"><div class="h-stat-val">3+</div><div class="h-stat-lbl">Years Experience</div></div>
+        <div class="h-stat"><div class="h-stat-val">15+</div><div class="h-stat-lbl">Certifications</div></div>
       </div>
     </div>
 
@@ -229,7 +268,7 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
              onerror="this.style.display='none';document.getElementById('ph').style.display='flex';"
              alt="Rahma Ras" />
         <div id="ph" class="photo-placeholder">
-          <div class="photo-placeholder-icon">👩‍💻</div>
+          <div style="font-size:3rem;opacity:0.4;">👩‍💻</div>
           <div style="font-weight:600;">Add your photo!</div>
           <div>Upload photo.jpg to your GitHub repo</div>
         </div>
@@ -242,9 +281,11 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
   </div>
 </div>
 
+<!-- PROJECTS -->
 <section class="section section-white" id="projects">
   <div class="section-inner">
     <div class="reveal"><div class="s-eyebrow">Work</div><div class="s-title">Featured Projects</div></div>
+
     <div class="featured reveal">
       <div class="feat-vis">
         <svg width="0" height="0" style="position:absolute">
@@ -267,18 +308,18 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
         </div>
         <div class="feat-metrics">
           <div class="feat-met"><div class="feat-met-val">780</div><div class="feat-met-lbl">Patients</div></div>
-          <div class="feat-met"><div class="feat-met-val">0.696</div><div class="feat-met-lbl">METABRIC</div></div>
-          <div class="feat-met"><div class="feat-met-val">3.6%</div><div class="feat-met-lbl">Bias Gap</div></div>
+          <div class="feat-met"><div class="feat-met-val">20K</div><div class="feat-met-lbl">Genes</div></div>
+          <div class="feat-met"><div class="feat-met-val">200</div><div class="feat-met-lbl">Key Features</div></div>
         </div>
       </div>
       <div class="feat-body">
         <div class="feat-badge">✦ Capstone · Deployed Live</div>
-        <h3>ER Status Predictor — Trustworthy Genomic AI</h3>
-        <p>Predicted breast cancer ER status from TCGA RNA-seq data (780 patients, 20,530 genes). Built a full evaluation framework measuring stability via Jaccard similarity, bias via SMOTE, and explainability via SHAP — validated externally on 1,937 METABRIC patients.</p>
+        <h3>Interpretable ML for Gene-Based Phenotype Prediction</h3>
+        <p>Developed ML models (Logistic Regression, Random Forest, XGBoost) to predict breast cancer tumor subtypes from RNA-seq gene expression data. Reduced ~20,000 genes to 200 key features. Used SHAP and InterpretML for biological explainability, validated with Stratified Cross-Validation and ROC-AUC metrics.</p>
         <div class="tags">
           <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">SHAP</span>
-          <span class="tag">SMOTE</span><span class="tag">Streamlit</span><span class="tag">BioGPT</span>
-          <span class="tag">Docker</span><span class="tag">TCGA</span>
+          <span class="tag">XGBoost</span><span class="tag">InterpretML</span><span class="tag">SMOTE</span>
+          <span class="tag">Streamlit</span><span class="tag">TCGA RNA-seq</span>
         </div>
         <div class="feat-links">
           <a href="https://rasrahma06-rahmaras-er-predictor.hf.space" target="_blank" class="feat-link feat-link-primary">&#9654; Live App</a>
@@ -291,7 +332,7 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
       <div class="proj-card reveal d1">
         <div class="proj-cat cat-ai">AI Agent</div>
         <h4>Conversational AI Agent</h4>
-        <p>Built voice-first AI agents with LangChain and LangGraph at Genaiva. Implemented RAG pipelines with FAISS vector databases and Twilio/Deepgram STT-TTS for real-time inference.</p>
+        <p>Built voice-first AI agents with LangChain and LangGraph at Genaiva. Implemented RAG pipelines with vector databases and Twilio/Deepgram STT-TTS for real-time telephony inference.</p>
         <div class="tags">
           <span class="tag" style="background:#fce7f3;color:var(--pink);border-color:rgba(217,70,168,0.18);">LangChain</span>
           <span class="tag" style="background:#fce7f3;color:var(--pink);border-color:rgba(217,70,168,0.18);">LangGraph</span>
@@ -300,78 +341,175 @@ footer{position:relative;z-index:1;border-top:1.5px solid var(--border);padding:
         </div>
       </div>
       <div class="proj-card reveal d2">
-        <div class="proj-cat cat-data">Analytics</div>
-        <h4>Healthcare Data Analytics</h4>
-        <p>Analyzed clinical research datasets at Johns Hopkins ICTR for NIH-funded studies. Built REDCap databases and Tableau dashboards for patient outcome reporting and clinical KPIs.</p>
+        <div class="proj-cat cat-ml">Deep Learning</div>
+        <h4>Variational Autoencoder — Facial Features</h4>
+        <p>Built and trained a VAE on the CelebA dataset to learn latent facial feature representations, exploring generative modelling and dimensionality reduction techniques.</p>
         <div class="tags">
-          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">SQL</span>
-          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">Tableau</span>
-          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">REDCap</span>
-          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">VAE</span>
+          <span class="tag">CelebA</span>
+          <span class="tag">Generative AI</span>
+        </div>
+      </div>
+      <div class="proj-card reveal d3">
+        <div class="proj-cat cat-data">NLP</div>
+        <h4>ML for Misinformation Detection</h4>
+        <p>Developed classification models to detect misinformation and evaluated performance using cross-validation metrics across multiple model architectures.</p>
+        <div class="tags">
+          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">NLP</span>
+          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">Classification</span>
+          <span class="tag" style="background:var(--teal-light);color:var(--teal);border-color:rgba(14,165,160,0.2);">Cross-Validation</span>
+        </div>
+      </div>
+      <div class="proj-card reveal d4">
+        <div class="proj-cat cat-ethics">AI Ethics</div>
+        <h4>Ethical AI Governance Analysis</h4>
+        <p>Evaluated bias and fairness risks in ML systems and proposed AI evaluation frameworks for responsible deployment in high-stakes environments.</p>
+        <div class="tags">
+          <span class="tag" style="background:#fef3c7;color:#92400e;border-color:rgba(245,158,11,0.2);">AI Fairness</span>
+          <span class="tag" style="background:#fef3c7;color:#92400e;border-color:rgba(245,158,11,0.2);">Bias Analysis</span>
+          <span class="tag" style="background:#fef3c7;color:#92400e;border-color:rgba(245,158,11,0.2);">Governance</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- EXPERIENCE -->
 <section class="section section-tinted" id="experience">
   <div class="section-inner">
     <div class="reveal"><div class="s-eyebrow">Career</div><div class="s-title">Experience</div></div>
     <div class="timeline">
+
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
-        <div class="tl-header"><span class="tl-role">AI/ML Engineer</span><span class="tl-company">Genaiva</span><span class="tl-date">Jan 2025 – Present</span></div>
+        <div class="tl-header"><span class="tl-role">Data Science Intern</span><span class="tl-company">Genaiva — Voice AI Startup</span><span class="tl-date">2025</span></div>
         <ul class="tl-desc">
-          <li>Built conversational AI agents using LangChain and LangGraph for a voice-first B2B platform</li>
-          <li>Implemented RAG pipelines with FAISS vector databases for dynamic knowledge retrieval</li>
-          <li>Integrated real-time STT/TTS with Twilio and Deepgram for sub-second inference</li>
+          <li>Developed conversational AI agents using LangChain and LangGraph</li>
+          <li>Implemented RAG pipelines with vector databases for dynamic knowledge retrieval</li>
+          <li>Integrated STT/TTS APIs including Twilio and Deepgram for real-time inference</li>
+          <li>Assisted debugging real-time inference pipelines with structured logging and health checks</li>
+          <li>Contributed to AI-powered telephony system design and workflow optimization</li>
         </ul>
       </div>
+
       <div class="tl-item reveal d1">
         <div class="tl-dot"></div>
-        <div class="tl-header"><span class="tl-role">M.P.S. Data Science</span><span class="tl-company">UMBC</span><span class="tl-date">Aug 2023 – May 2025</span></div>
+        <div class="tl-header"><span class="tl-role">Project Manager</span><span class="tl-company">SphereHub</span><span class="tl-date">2025 – 2026</span></div>
         <ul class="tl-desc">
-          <li>GPA 3.7 · Machine Learning, NLP, Big Data, Statistical Analysis</li>
-          <li>Capstone: breast cancer genomic AI · AUC 0.95 · validated on 1,937 patients</li>
+          <li>Designed data collection workflows using Google Forms and Apps Script</li>
+          <li>Automated onboarding processes for student housing platform users</li>
+          <li>Led weekly intern meetings and coordinated cross-functional deliverables</li>
+          <li>Monitored project milestones and ensured alignment with product roadmap</li>
         </ul>
       </div>
+
       <div class="tl-item reveal d2">
         <div class="tl-dot"></div>
-        <div class="tl-header"><span class="tl-role">Research Data Analyst</span><span class="tl-company">Johns Hopkins ICTR</span><span class="tl-date">2022 – 2023</span></div>
+        <div class="tl-header"><span class="tl-role">Marketing & Data Intern</span><span class="tl-company">Amplify MedTech</span><span class="tl-date">Spring–Summer 2025</span></div>
         <ul class="tl-desc">
-          <li>Managed clinical datasets for NIH-funded studies</li>
-          <li>Built REDCap databases and Tableau dashboards for patient outcome reporting</li>
-          <li>Collaborated with physicians on data collection protocols and IRB documentation</li>
+          <li>Built and analyzed performance dashboards using Google Sheets</li>
+          <li>Improved audience engagement by 30% through data-driven campaign optimization</li>
+          <li>Tracked KPIs and generated structured reports for executive review</li>
+          <li>Managed digital outreach campaigns reaching 1,000+ MedTech professionals</li>
         </ul>
       </div>
+
       <div class="tl-item reveal d3">
         <div class="tl-dot"></div>
-        <div class="tl-header"><span class="tl-role">B.S. Information Systems</span><span class="tl-company">UMBC</span><span class="tl-date">2018 – 2022</span></div>
-        <ul class="tl-desc"><li>Foundation in databases, systems analysis, and software development</li></ul>
+        <div class="tl-header"><span class="tl-role">Assistant Teacher</span><span class="tl-company">Catonsville Elementary — The Y of Central Maryland</span><span class="tl-date">2022 – 2023</span></div>
+        <ul class="tl-desc">
+          <li>Supported students with homework and educational activities</li>
+        </ul>
+      </div>
+
+      <div class="tl-item reveal d4">
+        <div class="tl-dot"></div>
+        <div class="tl-header"><span class="tl-role">Data Analyst & Scheduler</span><span class="tl-company">M.I. Memorial Dental Hospital</span><span class="tl-date">2009 – 2011</span></div>
+        <ul class="tl-desc">
+          <li>Managed structured healthcare datasets for administrative reporting</li>
+          <li>Generated operational reports to support data-driven decision-making</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section section-white" id="education">
+  <div class="section-inner">
+    <div class="reveal"><div class="s-eyebrow">Academic</div><div class="s-title">Education</div></div>
+    <div class="edu-grid reveal">
+      <div class="edu-card">
+        <div class="edu-degree">Master's in Applied Data Science</div>
+        <div class="edu-school">University of Maryland, Baltimore County (UMBC)</div>
+        <div class="edu-date">August 2024 – Expected December 2026</div>
+        <div class="edu-courses"><strong>Coursework:</strong> Big Data Processing (Hadoop, Spark) · Data Management (SQL) · Generative AI (LLMs, Transformers) · Math Foundations of ML · Statistical Data Analysis · Data Science for Finance · Ethical Issues in Data Science · Probability & Statistics · Capstone in Data Science</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">B.S. Biological Science</div>
+        <div class="edu-school">Undergraduate Degree</div>
+        <div class="edu-date">Foundation in life sciences and research methodology</div>
+        <div class="edu-courses"><strong>Background:</strong> Biological sciences · Research methods · Scientific analysis — forming the basis for biomedical AI applications</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-white" id="skills">
+<!-- SKILLS -->
+<section class="section section-tinted" id="skills">
   <div class="section-inner">
     <div class="reveal"><div class="s-eyebrow">Toolkit</div><div class="s-title">Skills</div></div>
     <div class="skills-grid">
-      <div class="skill-card reveal"><div class="skill-icon si-v">🧬</div><h4>Machine Learning</h4><p>Scikit-learn · SHAP · SMOTE · Random Forest · XGBoost · cross-validation · model evaluation</p></div>
-      <div class="skill-card reveal d1"><div class="skill-icon si-p">🤖</div><h4>Generative AI</h4><p>LLMs · RAG · LangChain · LangGraph · prompt engineering · BioGPT · FAISS</p></div>
-      <div class="skill-card reveal d2"><div class="skill-icon si-t">🐍</div><h4>Languages & Data</h4><p>Python · SQL · R · Pandas · NumPy · Matplotlib · Seaborn · Jupyter</p></div>
-      <div class="skill-card reveal d3"><div class="skill-icon si-a">☁️</div><h4>Platforms & Tools</h4><p>GitHub · Docker · Hugging Face · Streamlit · Tableau · REDCap · Google Workspace</p></div>
-      <div class="skill-card reveal"><div class="skill-icon si-v">📊</div><h4>Big Data</h4><p>Hadoop · Spark · Hive · HDFS · distributed computing pipelines</p></div>
-      <div class="skill-card reveal d1"><div class="skill-icon si-t">🏥</div><h4>Healthcare & Bio</h4><p>TCGA · METABRIC · RNA-seq analysis · clinical data systems · research informatics</p></div>
+      <div class="skill-card reveal"><div class="skill-icon si-v">🧬</div><h4>Machine Learning</h4><p>Scikit-learn · SHAP · InterpretML · XGBoost · Random Forest · cross-validation · statistical modeling</p></div>
+      <div class="skill-card reveal d1"><div class="skill-icon si-p">🤖</div><h4>Generative AI</h4><p>LLMs · Transformers · RAG · LangChain · LangGraph · prompt engineering · vector databases</p></div>
+      <div class="skill-card reveal d2"><div class="skill-icon si-t">🐍</div><h4>Programming & Data</h4><p>Python · SQL · Pandas · NumPy · Tableau · relational database design</p></div>
+      <div class="skill-card reveal d3"><div class="skill-icon si-a">☁️</div><h4>Big Data & Systems</h4><p>Hadoop · Apache Spark · distributed systems · STT/TTS APIs · real-time inference workflows</p></div>
+      <div class="skill-card reveal"><div class="skill-icon si-v">🏥</div><h4>Healthcare & Bio</h4><p>RNA-seq analysis · TCGA datasets · biomedical AI · clinical data · SMOTE · bias correction</p></div>
+      <div class="skill-card reveal d1"><div class="skill-icon si-p">🛠️</div><h4>Tools & Platforms</h4><p>GitHub · Docker · Hugging Face · Streamlit · Google Workspace · MS Office · Canva · HTML</p></div>
     </div>
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
+<section class="section section-white">
+  <div class="section-inner">
+    <div class="reveal"><div class="s-eyebrow">Credentials</div><div class="s-title">Certifications</div></div>
+    <div class="certs-grid">
+      <div class="cert-card reveal"><div class="cert-icon">🤖</div><div><div class="cert-name">Google AI Productivity & Prompt Engineering Specialization</div><div class="cert-issuer">Google · 2026</div></div></div>
+      <div class="cert-card reveal d1"><div class="cert-icon">🧠</div><div><div class="cert-name">Machine Learning Advanced Certification Training</div><div class="cert-issuer">Simplilearn · Code: 1658581</div></div></div>
+      <div class="cert-card reveal d2"><div class="cert-icon">🐍</div><div><div class="cert-name">Data Science with Python</div><div class="cert-issuer">Simplilearn · Code: 1743392</div></div></div>
+      <div class="cert-card reveal d3"><div class="cert-icon">📊</div><div><div class="cert-name">Data Science with R</div><div class="cert-issuer">Simplilearn · Code: 1635102</div></div></div>
+      <div class="cert-card reveal"><div class="cert-icon">⚡</div><div><div class="cert-name">Big Data Hadoop & Spark Developer</div><div class="cert-issuer">Simplilearn · Code: 1644920</div></div></div>
+      <div class="cert-card reveal d1"><div class="cert-icon">📈</div><div><div class="cert-name">Tableau Desktop 10</div><div class="cert-issuer">Simplilearn · Code: 3261842</div></div></div>
+      <div class="cert-card reveal d2"><div class="cert-icon">✅</div><div><div class="cert-name">Use AI Responsibly</div><div class="cert-issuer">Google · ID: X1YRV7BDZLNZ</div></div></div>
+      <div class="cert-card reveal d3"><div class="cert-icon">🚀</div><div><div class="cert-name">Maximize Productivity With AI Tools</div><div class="cert-issuer">Google · ID: V8GY3J3GGW4T</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
 <section class="section section-tinted">
+  <div class="section-inner">
+    <div class="reveal"><div class="s-eyebrow">Community</div><div class="s-title">Leadership & Engagement</div></div>
+    <div class="lead-grid">
+      <div class="lead-card reveal"><div class="lead-icon li-v">💰</div><div class="lead-text"><div class="lead-title">Treasurer</div><div class="lead-sub">Biocomputational Engineering Club, USM</div></div></div>
+      <div class="lead-card reveal d1"><div class="lead-icon li-p">🎓</div><div class="lead-text"><div class="lead-title">Member</div><div class="lead-sub">Graduate Student Association, UMBC</div></div></div>
+      <div class="lead-card reveal d2"><div class="lead-icon li-t">🎤</div><div class="lead-text"><div class="lead-title">Macklin Public Speaking Certificate</div><div class="lead-sub">2024</div></div></div>
+      <div class="lead-card reveal d3"><div class="lead-icon li-a">🧾</div><div class="lead-text"><div class="lead-title">IRS Certified Volunteer</div><div class="lead-sub">VITA Tax Services</div></div></div>
+      <div class="lead-card reveal"><div class="lead-icon li-v">🌙</div><div class="lead-text"><div class="lead-title">Youth Program Coordinator</div><div class="lead-sub">BIS Ramadan Program 2026</div></div></div>
+      <div class="lead-card reveal d1"><div class="lead-icon li-p">👥</div><div class="lead-text"><div class="lead-title">Youth Leader</div><div class="lead-sub">Community engagement & mentorship</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-white">
   <div class="section-inner">
     <div class="contact-card reveal">
       <h2>Let's work together.</h2>
-      <p>Open to full-time roles in data science, AI engineering, and computational research.<br>Based in Maryland · open to remote.</p>
+      <p>Open to full-time roles and internships in data science, AI engineering, and ML research.<br>Based in Maryland · open to remote.</p>
       <div class="contact-links">
         <a href="mailto:rasrahma06@gmail.com" class="btn btn-grad">rasrahma06@gmail.com</a>
         <a href="https://linkedin.com/in/rahma-ras" target="_blank" class="btn btn-white">LinkedIn</a>
